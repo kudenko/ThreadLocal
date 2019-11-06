@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Searches" parallel="tests" thread-count="2">
+	<parameter name="before" value="test"></parameter>
+	<test name="Book">
+		<classes>
+			<class name="SearchBook"></class>
+		</classes>
+	</test>
+	<test name="Film">
+		<classes>
+			<class name="SearchFilm"></class>
+		</classes>
+	</test>
+	<test name="Music">
+		<classes>
+			<class name="SearchMusic"></class>
+		</classes>
+	</test>
+</suite>
+

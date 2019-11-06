@@ -1,11 +1,11 @@
 package core;
 
 import org.openqa.selenium.WebDriver;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CurrentSession {
+
+    ///public static WebDriver ddd = new ChromeDriver();
 
     static ThreadLocal<WebDriver> DRIVER = new ThreadLocal<>();
 
