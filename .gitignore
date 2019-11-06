@@ -1,0 +1,8 @@
+.idea/*
+/DRIVER*
+*.iml
+out*
+/target/*
+allure-report/
+allure-results/
+test-output/
