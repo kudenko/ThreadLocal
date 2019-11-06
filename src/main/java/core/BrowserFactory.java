@@ -7,6 +7,9 @@ import org.testng.annotations.*;
 
 public class BrowserFactory extends CurrentSession{
 
+
+    //public static WebDriver ddd;
+
     @BeforeSuite
     @Parameters({"before"})
     public void before(@Optional("suite")String before){
@@ -23,6 +26,7 @@ public class BrowserFactory extends CurrentSession{
             System.out.println("Run Before Test");
             setUpBrowser();
         }
+        //ddd = new ChromeDriver();
     }
 
     @AfterSuite
@@ -45,8 +49,6 @@ public class BrowserFactory extends CurrentSession{
             if (driver() != null) {
                 driver().quit();
             }
-
-
         }
     }
 
