@@ -7,6 +7,8 @@ import org.testng.annotations.*;
 
 public class BrowserFactory extends CurrentSession{
 
+    static WebDriver driver;
+
 
     //public static WebDriver ddd;
 
@@ -34,9 +36,7 @@ public class BrowserFactory extends CurrentSession{
     public void after(@Optional("suite")String before){
         if(before.equals("suite")) {
             System.out.println("Run After Suite");
-            if (driver() != null) {
-                driver().quit();
-            }
+           tearDown();
         }
     }
 
@@ -45,18 +45,22 @@ public class BrowserFactory extends CurrentSession{
     public void afterT(@Optional("")String before){
         if(before.equals("test")) {
             System.out.println("Run After Test");
-           // ddd.quit();
-            if (driver() != null) {
-                driver().quit();
-            }
         }
+        tearDown();
     }
 
 
     private void setUpBrowser() {
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         setDRIVER(driver);
         driver().manage().window().setSize(new Dimension(1600, 2000));
+    }
+
+    private void tearDown(){
+        // ddd.quit();
+        if (driver() != null) {
+            driver().quit();
+        }
     }
 
 }
